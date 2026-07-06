@@ -33,7 +33,7 @@ class TestDataIngestion:
         import json
 
         producer = KafkaProducer(
-            bootstrap_servers="localhost:9092",
+            bootstrap_servers="localhost:29092",
             value_serializer=lambda v: json.dumps(v).encode()
         )
         producer.send("data.raw", {"id": "smoke_001", "text": "smoke test document"})
